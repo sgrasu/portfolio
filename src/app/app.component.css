@@ -1,0 +1,17 @@
+.row{
+	width:100%;
+}
+.grid{
+	margin: 0 auto;
+}
+.grid ng-masonry-grid-item {
+	display: block;
+	float:left;
+	width:525px;
+	margin-bottom: 10px;
+	margin:0 auto;
+}
+img {
+	max-width:100%;
+}
+.grid-item{}

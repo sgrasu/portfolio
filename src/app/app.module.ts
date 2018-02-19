@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {ConfigService} from './services/config.service';
+import { ConfigService } from './services/config.service';
 import { AppComponent } from './app.component';
-
+import { NgMasonryGridModule } from 'ng-masonry-grid';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgMasonryGridModule
   ],
   providers: [
   	ConfigService],

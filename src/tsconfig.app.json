@@ -9,5 +9,13 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "packages": {
+    "angular2-masonry": { "defaultExtension": "js", "main": "index" }
+  },
+  "map": {
+    "angular2-masonry": "node_modules/angular2-masonry",
+    "masonry-layout": "node_modules/masonry-layout/dist/masonry.pkgd.js"
+  }
+
 }

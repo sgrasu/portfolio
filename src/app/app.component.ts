@@ -16,6 +16,23 @@ export class AppComponent {
   albums: Array<Album> = [];
   data: Object;
   photos: Array<Photo> = [];
+  shuffle(array) {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
   constructor(private configService:ConfigService){
   	this.configService.getData().subscribe(data => {
   		this.data = data;
@@ -32,6 +49,7 @@ export class AppComponent {
   					this.photos_uri+'/' + photo['thmbnl']));
   			}
   		}
+  		this.shuffle(this.photos);
   		console.log(this.photos);
   	});
   	// (<any>data).albums.forEach(json_album=>{

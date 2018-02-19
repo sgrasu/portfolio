@@ -1,16 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-2">
+<div class="container-fluid w-100">
+  <div class="row w-100">
+    <div class="col-1">
       <nav class="nav flex-column" *ngFor="let album of albums">
-        <a class="nav-link active" href="{{album.uri">{{album.title}}</a>
+        <a class="nav-link active" href={{album.uri}}>{{album.title}}</a>
       </nav>
     </div>
-    <div class="col-sm-10">
-      <ul class = "list-group" *ngFor= "let photo of photos">
-        <li class="list-grop-item">
-          {{photo.thmbnl}}
-          <img src= {{photo.thmbnl}}/>
-          }
-        </li>
-      </ul>
+    <div class="col-11">
+      <ng-masonry-grid class="grid" [useImagesLoaded]="true" [masonryOptions]="{ transitionDuration: '0.8s', gutter: 20, fitWidth:'true' }" >
+       <ng-masonry-grid-item class="grid-item" *ngFor="let photo of photos">
+        <img src = {{photo.thmbnl}}/>
+       </ng-masonry-grid-item>
+     </ng-masonry-grid>
     </div>
