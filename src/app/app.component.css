@@ -3,11 +3,12 @@
 }
 .grid{
 	margin: 0 auto;
+	padding-top: 60px;
 }
 .grid ng-masonry-grid-item {
 	display: block;
 	float:left;
-	width:525px;
+	width:475px;
 	margin-bottom: 10px;
 	margin:0 auto;
 }
@@ -15,3 +16,25 @@ img {
 	max-width:100%;
 }
 .grid-item{}
+
+
+#gallery {
+	padding: 0;
+}
+.btn-nav {
+	width:100%;
+	padding-top:20px;
+	padding-bottom:20px;
+	font-family: Arvo;
+	font-size: 30px;
+	color: #9c9c9c;
+}
+#name{
+	padding-top: 10px;
+	white-space: nowrap;
+	color: #616060;
+}
+.btn-nav, #name{
+	padding-right: 16px;
+	padding-left: 16px;
+}

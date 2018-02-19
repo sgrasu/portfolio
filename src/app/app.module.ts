@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './services/config.service';
 import { AppComponent } from './app.component';
 import { NgMasonryGridModule } from 'ng-masonry-grid';
+import { LightboxModule } from 'angular2-lightbox';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { NgMasonryGridModule } from 'ng-masonry-grid';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgMasonryGridModule
+    NgMasonryGridModule,
+    LightboxModule
   ],
   providers: [
   	ConfigService],

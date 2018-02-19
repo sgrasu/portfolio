@@ -1,14 +1,21 @@
-<div class="container-fluid w-100">
+<div class="container-fluid w-100 main">
   <div class="row w-100">
-    <div class="col-1">
-      <nav class="nav flex-column" *ngFor="let album of albums">
-        <a class="nav-link active" href={{album.uri}}>{{album.title}}</a>
+    <div class="col-2" id="navigation">
+      <nav class="nav flex-column">
+        <h1 id="name"> Stefan Grasu</h1>
+        <button  type="button" class="btn btn-link btn-nav btn-block btn-lg" (click)="changeFilter('any')">Gallery</button>
+        <button type="button" class="btn btn-link btn-nav btn-block btn-lg"  *ngFor="let album of albums" (click)="changeFilter(album.title)">{{album.title}}</button>
       </nav>
     </div>
-    <div class="col-11">
-      <ng-masonry-grid class="grid" [useImagesLoaded]="true" [masonryOptions]="{ transitionDuration: '0.8s', gutter: 20, fitWidth:'true' }" >
-       <ng-masonry-grid-item class="grid-item" *ngFor="let photo of photos">
-        <img src = {{photo.thmbnl}}/>
+    <div class="col-10" id="gallery">
+      <ng-masonry-grid class="grid"
+        [useImagesLoaded]="true"
+        [masonryOptions]="{ transitionDuration: '0.8s', gutter: 25, fitWidth:'true', columnWidth: 475 }"
+        (onNgMasonryInit)="onNgMasonryInit($event)" >
+       <ng-masonry-grid-item class="grid-item" *ngFor="let photo of photos" [hidden] = "filter !== photo.album && filter !== 'any'">
+        <a data-toggle="lightbox" href={{photo.src}}>
+          <img src = {{photo.thmb}}/>
+        </a>
        </ng-masonry-grid-item>
      </ng-masonry-grid>
     </div>
