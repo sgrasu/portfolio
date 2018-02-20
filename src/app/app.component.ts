@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {environment} from '../environments/environment';
 import{ Album } from './album.model';
 import { Photo } from './photo.model';
@@ -9,7 +9,7 @@ import { Masonry, MasonryGridItem } from 'ng-masonry-grid';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['../../node_modules/ng-masonry-grid/ng-masonry-grid.css','./app.component.css']
 })
 export class AppComponent {
   title = 'app';
@@ -64,6 +64,7 @@ export class AppComponent {
 	}	
 	changeFilter(filter: string){
 		this.filter = filter;
+
 		console.log(filter);
 		setTimeout(()=>{this._masonry.layout()},80);
 	}

@@ -10,10 +10,13 @@
     <div class="col-10" id="gallery">
       <ng-masonry-grid class="grid"
         [useImagesLoaded]="true"
-        [masonryOptions]="{ transitionDuration: '0.8s', gutter: 25, fitWidth:'true', columnWidth: 475 }"
+        [masonryOptions]="{ transitionDuration: '3.0s', gutter: 25, fitWidth:'true', columnWidth: 450 }"
+        [useAnimation]= "false"
         (onNgMasonryInit)="onNgMasonryInit($event)" >
        <ng-masonry-grid-item class="grid-item" *ngFor="let photo of photos" [hidden] = "filter !== photo.album && filter !== 'any'">
-        <a data-toggle="lightbox" href={{photo.src}}>
+        <a data-toggle="lightbox"
+         [attr.data-gallery]=" filter === 'any'? 'any' : photo.album"
+         href={{photo.src}}>
           <img src = {{photo.thmb}}/>
         </a>
        </ng-masonry-grid-item>
