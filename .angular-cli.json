@@ -12,7 +12,9 @@
         "assets/photoscript.py",
         "assets/test.ts",
         "assets/.gitkeep",
-        "favicon.ico"
+        "favicon.ico",
+        "assets/icons",
+        "assets"
       ],
       "index": "index.html",
       "main": "main.ts",
