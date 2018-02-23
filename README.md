@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio [website](www.stefangrasu.com).
+Personal portfolio [website](https://www.stefangrasu.com).
 This project was created with the following frameworks 
 - [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 - [BootStrap](https://getbootstrap.com) version 4.0.0
