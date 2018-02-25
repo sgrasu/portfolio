@@ -22,7 +22,6 @@ img {
 .grid-item{
 
 }
-
 .affix{
 	position: fixed;
 }
@@ -30,17 +29,20 @@ img {
 	padding:0;
 	padding-top: 0.5vw;
 }
+.btn-block {
+	margin-top: 3rem;
+}
 .btn-nav {
 	width:100%;
 	padding-top:30px;
 	padding-bottom:30px;
-	font-family: Arvo;
-	font-size: 1.5rem;
+	font-family: 'Julius Sans One';
+	font-size: 1.63rem;
 	color: #9c9c9c;
 }
 .nav {
 		margin-top:-3vw;
-		padding-top:3vw;
+		padding-top:4vw;
 		left: 5%;
 		z-index: 1;	
 }
@@ -49,11 +51,12 @@ img {
 	padding-bottom:0px;
 	white-space: nowrap;
 	color: FloralWhite;
-	font-size: 3.5rem;
+	font-size: 3.4rem;
 	text-align:left;
 	display:inline;
 	float:left;
 	z-index: 2;
+	font-family: 'Julius Sans One'
 }
 .btn-nav, .name{
 	padding-right: 16px;
@@ -61,6 +64,10 @@ img {
 }
 .btn-nav{
 
+}
+.flex-column{
+	position:sticky;
+	top: -4vw;
 }
 #dropdownMenu2, dropdownOptions {
 	display: none;

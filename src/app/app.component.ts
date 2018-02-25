@@ -67,6 +67,7 @@ export class AppComponent {
 
 		console.log(filter);
 		setTimeout(()=>{this._masonry.layout()},80);
+		window.scrollTo(0,0);
 	}
 
 }
