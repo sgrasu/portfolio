@@ -40,7 +40,25 @@ img {
 	font-size: 1.63rem;
 	color: #9c9c9c;
 }
+.btn-social {
+	width:3rem;
+	background-color: #212529;
+	padding:.25rem;
+
+}
+.socialrow {
+	margin-bottom:auto;
+	position:fixed;
+	bottom:2vh;
+	margin-bottom:-0vh;
+	left:6.5vw;
+	z-index: 2;
+}
+.social-icon{
+	width:100%;
+}
 .nav {
+		height:95vh;
 		margin-top:-3vw;
 		padding-top:4vw;
 		left: 5%;
@@ -89,6 +107,8 @@ img {
 #navigation{
 	padding:0;
 	text-align: center;
+	flex-direction: row;
+	justify-content: center;
 }
 @media screen and (max-width: 3000px) {
 	.spacer, .grid ng-masonry-grid-item, .grid-item{
