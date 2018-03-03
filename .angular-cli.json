@@ -13,8 +13,7 @@
         "assets/test.ts",
         "assets/.gitkeep",
         "favicon.ico",
-        "assets/icons",
-        "assets"
+        "assets/icons"
       ],
       "index": "index.html",
       "main": "main.ts",

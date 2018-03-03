@@ -42,7 +42,7 @@ img {
 }
 .btn-social {
 	width:3rem;
-	background-color: #212529;
+	background-color: transparent;
 	padding:.25rem;
 
 }
@@ -51,7 +51,7 @@ img {
 	position:fixed;
 	bottom:2vh;
 	margin-bottom:-0vh;
-	left:6.5vw;
+	left:1vw;
 	z-index: 2;
 }
 .social-icon{
