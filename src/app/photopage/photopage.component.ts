@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import {environment} from '../environments/environment';
-import{ Album } from './album.model';
-import { Photo } from './photo.model';
-import { ConfigService } from './services/config.service';
+import {environment} from '../../environments/environment';
+import{ Album } from '../album.model';
+import { Photo } from '../photo.model';
+import { ConfigService } from '../services/config.service';
 import { Masonry } from 'ng-masonry-grid';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['../../node_modules/ng-masonry-grid/ng-masonry-grid.css','./app.component.css']
+  selector: 'app-photopage',
+  templateUrl: './photopage.component.html',
+  styleUrls: ['./photopage.component.css']
 })
-export class AppComponent {
+export class PhotopageComponent {
   title = 'app';
   photos_uri: string = environment.photos_uri;
   albums: Array<Album> = [];
