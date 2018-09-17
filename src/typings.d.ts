@@ -7,3 +7,4 @@ declare module "*.JSON" {
 	const value: any;
 	export default value;
 }
+declare var particles:any;
