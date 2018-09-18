@@ -6,7 +6,7 @@
 /* How to use? : Check the GitHub README
 /* v2.0.0
 /* ----------------------------------------------- */
-console.log("particles is loading!!!")
+
 var pJS = function(tag_id, params){
 
   var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
@@ -479,6 +479,39 @@ var pJS = function(tag_id, params){
         if(img_obj){
           draw();
         }
+      case 'tag':
+
+        function draw(){
+          pJS.canvas.ctx.drawImage(
+            img_obj,
+            p.x-radius,
+            p.y-radius,
+            radius*2,
+            radius*2
+          );
+        }
+        var img_obj = pJS.tmp.tag;
+
+        if(img_obj){
+          draw();
+        }
+      break;
+      case 'cam':
+
+        function draw(){
+          pJS.canvas.ctx.drawImage(
+            img_obj,
+            p.x-radius,
+            p.y-radius,
+            radius*2,
+            radius*2
+          );
+        }
+        var img_obj = pJS.tmp.cam;
+
+        if(img_obj){
+          draw();
+        }
 
       break;
 
@@ -661,6 +694,8 @@ var pJS = function(tag_id, params){
     cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
     pJS.tmp.source_svg = undefined;
     pJS.tmp.img_obj = undefined;
+    pJS.tmp.cam = undefined;
+    pJS.tmp.tag = undefined;
     pJS.tmp.count_svg = 0;
     pJS.fn.particlesEmpty();
     pJS.fn.canvasClear();
@@ -1301,10 +1336,38 @@ var pJS = function(tag_id, params){
 
       }
 
-    }else{
+    }
+
+    //cam image
+    if(pJS.particles.shape.cam.src != ''){
+      var cam_img = new Image();
+      cam_img.addEventListener('load', function(){
+        pJS.tmp.cam = cam_img;
+        pJS.fn.vendors.checkBeforeDraw();
+      });
+      cam_img.src = pJS.particles.shape.cam.src;
+
+
+    }
+    else{
       console.log('Error pJS - No image.src');
       pJS.tmp.img_error = true;
     }
+        //html tag image
+    if(pJS.particles.shape.tag.src != ''){
+      var img = new Image();
+      img.addEventListener('load', function(){
+        pJS.tmp.tag = img;
+        pJS.fn.vendors.checkBeforeDraw();
+      });
+      img.src = pJS.particles.shape.tag.src;
+
+    }
+    else{
+      console.log('Error pJS - No image.src');
+      pJS.tmp.img_error = true;
+    }
+
 
   };
 
@@ -1392,6 +1455,7 @@ var pJS = function(tag_id, params){
       pJS.tmp.img_type = pJS.particles.shape.image.src.substr(pJS.particles.shape.image.src.length - 3);
       pJS.fn.vendors.loadImg(pJS.tmp.img_type);
     }else{
+      pJS.fn.vendors.loadImg(pJS.tmp.img_type);
       pJS.fn.vendors.checkBeforeDraw();
     }
 
