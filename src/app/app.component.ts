@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {environment} from '../environments/environment';
 import{ Album } from './album.model';
 import { Photo } from './photo.model';
+import { HttpClient } from '@angular/common/http';
 import { ConfigService } from './services/config.service';
-import { Masonry } from 'ng-masonry-grid';
+import { Masonry, MasonryGridItem } from 'ng-masonry-grid';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +42,6 @@ export class AppComponent {
 	}
   	constructor(private configService:ConfigService){
 	  	this.configService.getData().subscribe(data => {
-	  		var tempPhotos = [];
 	  		this.data = data;
 	  		console.log(this.photos_uri);
 	  		for( var album in data['albums'])
@@ -51,12 +51,12 @@ export class AppComponent {
 	  				data['albums'][album].photos));
 	  			for(var index in data['albums'][album].photos){
 	  				var photo = data['albums'][album].photos[index];
-	  				tempPhotos.push(new Photo(photo['title'],photo['album'],
+	  				this.photos.push(new Photo(photo['title'],photo['album'],
 	  					this.photos_uri+'/'+photo['src'],
 	  					this.photos_uri+'/' + photo['thmbnl']));
 	  			}
 	  		}
-	  		this.photos = this.shuffle(tempPhotos);
+	  		this.shuffle(this.photos);
 	  		console.log(this.photos);
 	  	});
 	  	// (<any>data).albums.forEach(json_album=>{
