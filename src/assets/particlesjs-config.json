@@ -11,10 +11,10 @@
       "value": "#ffffff"
     },
     "shape": {
-      "type": "circle",
+      "type": "image",
       "stroke": {
         "width": 0,
-        "color": "#ffffff"
+        "color": "#000000"
       },
       "polygon": {
         "nb_sides": 5
@@ -68,7 +68,7 @@
     }
   },
   "interactivity": {
-    "detect_on": "window",
+    "detect_on": "canvas",
     "events": {
       "onhover": {
         "enable": true,
