@@ -1,9 +1,3 @@
-#home_container{
-    background-image: url('../../assets/homebkg.jpg');
-    height: 100vh;
-    background-size: cover;
-}
 #underconstruct{
-    font-size: 5rem;
     color: white;
 }
